@@ -41,12 +41,12 @@ CharacterController:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Height: 1.8
+  m_Height: 1.78
   m_Radius: 0.25
   m_SlopeLimit: 45
-  m_StepOffset: 0.3
-  m_SkinWidth: 0.08
-  m_MinMoveDistance: 0.001
+  m_StepOffset: 0.4
+  m_SkinWidth: 0.025
+  m_MinMoveDistance: 0.01
   m_Center: {x: 0, y: 0.9, z: 0}
 --- !u!114 &129069761118374667
 MonoBehaviour:
@@ -125,9 +125,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 278cd7a98fa46204ea3fa828c415de5e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  movementSpeed: 6
-  rotationSpeed: 60
-  jumpForceValue: 5
+  maxForwardSpeed: 6
+  maxBackwardSpeed: 3
+  rotationSpeed: 100
+  jumpForceValue: 8
+  groundAcceleration: 20
+  groundDeceleration: 25
 --- !u!1001 &8462974517742663974
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -200,6 +203,11 @@ PrefabInstance:
       propertyPath: m_Controller
       value: 
       objectReference: {fileID: 9100000, guid: 7ce0145bb1c1250448ffbc6cf8762523, type: 2}
+    - target: {fileID: 5866666021909216657, guid: 637003868b484ab49a0c9e534bb0e7b1,
+        type: 3}
+      propertyPath: m_ApplyRootMotion
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 637003868b484ab49a0c9e534bb0e7b1, type: 3}
 --- !u!1 &8769616429306004599 stripped

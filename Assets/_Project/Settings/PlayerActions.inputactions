@@ -56,7 +56,7 @@
                 {
                     "name": "WASD Keys",
                     "id": "cfb348f2-85e4-4871-8886-5c9857627f48",
-                    "path": "2DVector",
+                    "path": "2DVector(mode=1)",
                     "interactions": "",
                     "processors": "",
                     "groups": "",

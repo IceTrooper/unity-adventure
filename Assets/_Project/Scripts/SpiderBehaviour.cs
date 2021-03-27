@@ -13,6 +13,10 @@ public class SpiderBehaviour : MonoBehaviour
     private Transform followTarget = null;
     private float timerSinceLostTarget = 0f;
 
+    public static readonly int hashInPursuit = Animator.StringToHash("InPursuit");
+    public static readonly int hashNearBase = Animator.StringToHash("NearBase");
+    public static readonly int hashSpotted = Animator.StringToHash("Spotted");
+
     private void OnEnable()
     {
         enemyController = GetComponent<EnemyController>();
@@ -22,6 +26,10 @@ public class SpiderBehaviour : MonoBehaviour
     private void Update()
     {
         FindTarget();
+
+        Vector3 toBase = originalPosition - transform.position;
+        toBase.y = 0f;
+        enemyController.AnimatorController.SetBool(hashNearBase, toBase.sqrMagnitude < 0.01f);
     }
 
     private void FindTarget()
@@ -43,17 +51,15 @@ public class SpiderBehaviour : MonoBehaviour
                 }
             }
 
+            if(followTarget == null)
+            {
+                // We just saw the player
+                enemyController.AnimatorController.SetTrigger(hashSpotted);
+                StartPursuit();
+            }
+
             followTarget = closestTarget;
             enemyController.SetTarget(followTarget.position);
-            //if(followTarget == null)
-            //{
-            //    // We just saw the player
-            //    followTarget = closestTarget;
-            //}
-            //else
-            //{
-            //    followTarget = closestTarget;
-            //}
         }
         else
         {
@@ -69,22 +75,21 @@ public class SpiderBehaviour : MonoBehaviour
                 if(timerSinceLostTarget >= timeToStopPursuit)
                 {
                     followTarget = null;
+                    enemyController.SetTarget(originalPosition);
+                    StopPursuit();
                 }
             }
         }
+    }
 
-        if(followTarget == null)
-        {
-            // We just saw the player
-            if(targets.Length > 0)
-            {
-                // Pick closest
-                foreach(var t in targets)
-                {
-                    followTarget = t;
-                }
-            }
-        }
+    private void StartPursuit()
+    {
+        enemyController.AnimatorController.SetBool(hashInPursuit, true);
+    }
+
+    private void StopPursuit()
+    {
+        enemyController.AnimatorController.SetBool(hashInPursuit, false);
     }
 
     private void OnDrawGizmosSelected()

@@ -21,7 +21,6 @@ public class TargetScanner
                 Vector3 toPlayer = hc.transform.position - detector.position;
                 if(!Physics.Raycast(detector.position, toPlayer.normalized, detectionRadius, viewBlockerLayerMask, QueryTriggerInteraction.Ignore))
                 {
-                    Debug.Log("playeradded");
                     results.Add(hc.transform);
                 }
             }

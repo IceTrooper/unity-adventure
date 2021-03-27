@@ -1,9 +1,9 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
 public class SpiderBehaviour : MonoBehaviour
 {
+    public MeleeWeapon meleeWeapon;
+    public float attackDistance = 3f;
     public TargetScanner playerScanner;
     public float timeToStopPursuit;
 
@@ -16,6 +16,7 @@ public class SpiderBehaviour : MonoBehaviour
     public static readonly int hashInPursuit = Animator.StringToHash("InPursuit");
     public static readonly int hashNearBase = Animator.StringToHash("NearBase");
     public static readonly int hashSpotted = Animator.StringToHash("Spotted");
+    public static readonly int hashAttack = Animator.StringToHash("Attack");
 
     private void OnEnable()
     {
@@ -26,6 +27,7 @@ public class SpiderBehaviour : MonoBehaviour
     private void Update()
     {
         FindTarget();
+        CheckAttack();
 
         Vector3 toBase = originalPosition - transform.position;
         toBase.y = 0f;
@@ -72,6 +74,7 @@ public class SpiderBehaviour : MonoBehaviour
                 // We lost the target
                 timerSinceLostTarget += Time.deltaTime;
 
+                // Pursuit player even if not seen until timer is finished.
                 if(timerSinceLostTarget >= timeToStopPursuit)
                 {
                     followTarget = null;
@@ -90,6 +93,24 @@ public class SpiderBehaviour : MonoBehaviour
     private void StopPursuit()
     {
         enemyController.AnimatorController.SetBool(hashInPursuit, false);
+    }
+
+    private void CheckAttack()
+    {
+        if(followTarget != null)
+        {
+            Vector3 toTarget = followTarget.position - transform.position;
+            
+            if(toTarget.sqrMagnitude < attackDistance * attackDistance)
+            {
+                enemyController.AnimatorController.SetTrigger(hashAttack);
+            }
+        }
+    }
+
+    public void Attack()
+    {
+        meleeWeapon.MakeAttack();
     }
 
     private void OnDrawGizmosSelected()

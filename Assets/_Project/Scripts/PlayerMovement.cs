@@ -10,41 +10,64 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] private float groundAcceleration = 20f;
     [SerializeField] private float groundDeceleration = 25f;
 
+    [HideInInspector] public bool inAttack;
+    private bool isDead;
+
     private Vector2 inputDirection;
     private Vector3 playerVelocity;
 
     // References
     private CharacterController characterController;
     private Animator animator;
+    public MeleeWeapon meleeWeapon;
 
     // Animation hashes
     private int hashMoveSpeed = Animator.StringToHash("MoveSpeed");
     private int hashIsGrounded = Animator.StringToHash("IsGrounded");
     private int hashJump = Animator.StringToHash("Jump");
+    private int hashMeleeAttack = Animator.StringToHash("MeleeAttack");
+    private int hashHurt = Animator.StringToHash("Hurt");
+    private int hashDie = Animator.StringToHash("Die");
 
     private void Start()
     {
         characterController = GetComponent<CharacterController>();
         animator = GetComponent<Animator>();
+        meleeWeapon.gameObject.SetActive(false);
     }
 
     private void FixedUpdate()
     {
+        if(isDead) return;
+
         Move();
         animator.SetBool(hashIsGrounded, characterController.isGrounded);
     }
 
     public void OnMoveInput(InputAction.CallbackContext context)
     {
+        if(inAttack)
+        {
+            inputDirection = Vector2.zero;
+            return;
+        }
         inputDirection = context.ReadValue<Vector2>();
     }
 
     public void OnJumpInput(InputAction.CallbackContext context)
     {
-        if(context.started && characterController.isGrounded)
+        if(context.started && characterController.isGrounded && !inAttack)
         {
             playerVelocity.y += Mathf.Sqrt(-jumpForceValue * Physics.gravity.y);
             animator.SetTrigger(hashJump);
+        }
+    }
+
+    public void OnAttackInput(InputAction.CallbackContext context)
+    {
+        if(context.started && !inAttack)
+        {
+            animator.SetTrigger(hashMeleeAttack);
         }
     }
 
@@ -77,5 +100,21 @@ public class PlayerMovement : MonoBehaviour
         characterController.Move(transform.TransformDirection(playerVelocity) * Time.deltaTime);
         transform.Rotate(Vector3.up * inputDirection.x * rotationSpeed * Time.deltaTime);
         animator.SetFloat(hashMoveSpeed, playerVelocity.z);        
+    }
+
+    public void MeleeAttack()
+    {
+        meleeWeapon.MakeAttack();
+    }
+
+    public void GetHit()
+    {
+        animator.SetTrigger(hashHurt);
+    }
+
+    public void Die()
+    {
+        isDead = true;
+        animator.SetTrigger(hashDie);
     }
 }

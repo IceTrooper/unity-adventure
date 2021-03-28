@@ -215,11 +215,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 4771340264532015814}
     m_Modifications:
-    - target: {fileID: 129069761118374667, guid: 03c8749ebaf5ba8498442e590da94e8c,
-        type: 3}
-      propertyPath: m_Camera
-      value: 
-      objectReference: {fileID: 0}
     - target: {fileID: 151907581910736343, guid: 03c8749ebaf5ba8498442e590da94e8c,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -1800,6 +1795,21 @@ PrefabInstance:
       propertyPath: m_LocalRotation.z
       value: 0.016173402
       objectReference: {fileID: 0}
+    - target: {fileID: 8489424329598604458, guid: 03c8749ebaf5ba8498442e590da94e8c,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0.28189564
+      objectReference: {fileID: 0}
+    - target: {fileID: 8489424329598604458, guid: 03c8749ebaf5ba8498442e590da94e8c,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.7460323
+      objectReference: {fileID: 0}
+    - target: {fileID: 8489424329598604458, guid: 03c8749ebaf5ba8498442e590da94e8c,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0.051930897
+      objectReference: {fileID: 0}
     - target: {fileID: 8588403982741572979, guid: 03c8749ebaf5ba8498442e590da94e8c,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -1904,6 +1914,21 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalRotation.z
       value: 0.023798047
+      objectReference: {fileID: 0}
+    - target: {fileID: 8895551349720997724, guid: 03c8749ebaf5ba8498442e590da94e8c,
+        type: 3}
+      propertyPath: m_RotationOffset.x
+      value: -29.416962
+      objectReference: {fileID: 0}
+    - target: {fileID: 8895551349720997724, guid: 03c8749ebaf5ba8498442e590da94e8c,
+        type: 3}
+      propertyPath: m_RotationOffset.y
+      value: 42.142506
+      objectReference: {fileID: 0}
+    - target: {fileID: 8895551349720997724, guid: 03c8749ebaf5ba8498442e590da94e8c,
+        type: 3}
+      propertyPath: m_RotationOffset.z
+      value: 59.315475
       objectReference: {fileID: 0}
     - target: {fileID: 9223219954311088982, guid: 03c8749ebaf5ba8498442e590da94e8c,
         type: 3}

@@ -17,6 +17,7 @@ public class SpiderBehaviour : MonoBehaviour
     public static readonly int hashNearBase = Animator.StringToHash("NearBase");
     public static readonly int hashSpotted = Animator.StringToHash("Spotted");
     public static readonly int hashAttack = Animator.StringToHash("Attack");
+    public static readonly int hashDie = Animator.StringToHash("Die");
 
     private void OnEnable()
     {
@@ -111,6 +112,13 @@ public class SpiderBehaviour : MonoBehaviour
     public void Attack()
     {
         meleeWeapon.MakeAttack();
+    }
+
+    public void Die()
+    {
+        enemyController.NavMeshAgent.isStopped = true;
+        GetComponent<Collider>().enabled = false;
+        enemyController.AnimatorController.SetTrigger(hashDie);
     }
 
     private void OnDrawGizmosSelected()

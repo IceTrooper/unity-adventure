@@ -24,7 +24,6 @@ public class MeleeWeapon : MonoBehaviour
         {
             Damageable d = hc.GetComponent<Damageable>();
             if(d == null) return;
-            Debug.Log("Applying");
             d.ApplyDamage(damage);
         }
     }

@@ -230,7 +230,7 @@ MonoBehaviour:
     detectionRadius: 20
     detectionLayerMask:
       serializedVersion: 2
-      m_Bits: 3072
+      m_Bits: 512
     viewBlockerLayerMask:
       serializedVersion: 2
       m_Bits: 0
@@ -1707,7 +1707,7 @@ MonoBehaviour:
   damage: 1
   targetLayerMask:
     serializedVersion: 2
-    m_Bits: 3072
+    m_Bits: 512
   attackPoint:
     radius: 1
     offset: {x: 0, y: 0.84, z: 1.3}

@@ -1875,11 +1875,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Claire
       objectReference: {fileID: 0}
-    - target: {fileID: 8769616429306004599, guid: 03c8749ebaf5ba8498442e590da94e8c,
-        type: 3}
-      propertyPath: m_TagString
-      value: Player
-      objectReference: {fileID: 0}
     - target: {fileID: 8882810822493621552, guid: 03c8749ebaf5ba8498442e590da94e8c,
         type: 3}
       propertyPath: m_LocalPosition.x

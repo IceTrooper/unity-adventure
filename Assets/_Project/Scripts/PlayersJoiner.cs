@@ -7,7 +7,7 @@ public class PlayersJoiner : MonoBehaviour
 
     private void Update()
     {
-        if(Keyboard.current.nKey.wasPressedThisFrame && GameplayManager.Instance.inputEnabled)
+        if(Keyboard.current.nKey.wasPressedThisFrame && GameplayManager.Instance.InputEnabled)
         {
             playerInputManager.JoinPlayer(1, 1, "Keyboard-2", Keyboard.current);
         }

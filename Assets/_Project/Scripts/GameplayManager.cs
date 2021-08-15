@@ -1,6 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
 public class GameplayManager : MonoBehaviour
 {
@@ -17,7 +15,8 @@ public class GameplayManager : MonoBehaviour
         }
     }
 
-    public bool inputEnabled = false;
+    public bool InputEnabled => inputEnabled;
+    [SerializeField] private bool inputEnabled = false;
 
     public void EnableInput()
     {

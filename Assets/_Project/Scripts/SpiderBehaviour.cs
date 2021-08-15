@@ -2,10 +2,10 @@
 
 public class SpiderBehaviour : MonoBehaviour
 {
-    public MeleeWeapon meleeWeapon;
-    public float attackDistance = 3f;
-    public TargetScanner playerScanner;
-    public float timeToStopPursuit;
+    [SerializeField] private MeleeWeapon meleeWeapon;
+    [SerializeField] private float attackDistance = 3f;
+    [SerializeField] private TargetScanner playerScanner;
+    [SerializeField] private float timeToStopPursuit;
 
     private EnemyController enemyController = null;
 

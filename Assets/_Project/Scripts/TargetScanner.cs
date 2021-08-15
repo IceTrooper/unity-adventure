@@ -4,9 +4,9 @@ using UnityEngine;
 [System.Serializable]
 public class TargetScanner
 {
-    public float detectionRadius = 10f;
-    public LayerMask detectionLayerMask;
-    public LayerMask viewBlockerLayerMask;
+    [SerializeField] private float detectionRadius = 10f;
+    [SerializeField] private LayerMask detectionLayerMask;
+    [SerializeField] private LayerMask viewBlockerLayerMask;
 
     public Transform[] Detect(Transform detector)
     {

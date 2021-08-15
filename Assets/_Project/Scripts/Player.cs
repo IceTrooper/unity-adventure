@@ -1,6 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 using UnityEngine.InputSystem;
 
 public class Player : MonoBehaviour
@@ -22,6 +20,6 @@ public class Player : MonoBehaviour
 
     private void Start()
     {
-        InputEnabled = GameplayManager.Instance.inputEnabled;
+        InputEnabled = GameplayManager.Instance.InputEnabled;
     }
 }

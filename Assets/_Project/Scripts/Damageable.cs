@@ -3,7 +3,7 @@ using UnityEngine.Events;
 
 public class Damageable : MonoBehaviour
 {
-    public int maxHealth = 1;
+    [SerializeField] private int maxHealth = 1;
     
     public int CurrentHealth { get; private set; }
 

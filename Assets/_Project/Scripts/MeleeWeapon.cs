@@ -2,7 +2,7 @@
 
 public class MeleeWeapon : MonoBehaviour
 {
-    public int damage = 1;
+    [SerializeField] private int damage = 1;
 
     [System.Serializable]
     public class AttackPoint
@@ -12,8 +12,8 @@ public class MeleeWeapon : MonoBehaviour
         public Transform attackRoot;
     }
 
-    public LayerMask targetLayerMask;
-    public AttackPoint attackPoint;
+    [SerializeField] private LayerMask targetLayerMask;
+    [SerializeField] private AttackPoint attackPoint;
 
     public void MakeAttack()
     {

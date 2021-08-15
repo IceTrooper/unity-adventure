@@ -97,6 +97,6 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 0
   attackPoint:
-    radius: 0
-    offset: {x: 0, y: 0, z: 0}
-    attackRoot: {fileID: 0}
+    radius: 1
+    offset: {x: 0, y: 0, z: 1.75}
+    attackRoot: {fileID: 4420664804571618}

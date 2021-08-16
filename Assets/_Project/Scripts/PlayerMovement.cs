@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using System.Collections.Generic;
+using UnityEngine;
 using UnityEngine.InputSystem;
 
 public class PlayerMovement : MonoBehaviour
@@ -10,6 +11,12 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] private float groundAcceleration = 20f;
     [SerializeField] private float groundDeceleration = 25f;
 
+    [Header("Audio")]
+    [SerializeField] private LocomotionSoundsData locomotionSounds;
+    [SerializeField] private List<AudioClip> attackSounds;
+    [SerializeField] private List<AudioClip> hurtSounds;
+    [SerializeField] private AudioClip dieSound;
+
     [HideInInspector] public bool inAttack;
     private bool isDead;
 
@@ -17,9 +24,11 @@ public class PlayerMovement : MonoBehaviour
     private Vector3 playerVelocity;
 
     // References
+    [Header("References")]
+    [SerializeField] private AudioSource audioSource;
+    public MeleeWeapon meleeWeapon;
     private CharacterController characterController;
     private Animator animator;
-    public MeleeWeapon meleeWeapon;
 
     // Animation hashes
     private int hashMoveSpeed = Animator.StringToHash("MoveSpeed");
@@ -60,6 +69,9 @@ public class PlayerMovement : MonoBehaviour
         {
             playerVelocity.y += Mathf.Sqrt(-jumpForceValue * Physics.gravity.y);
             animator.SetTrigger(hashJump);
+
+            var randomSoundId = Random.Range(0, locomotionSounds.jumpSounds.Count);
+            audioSource.PlayOneShot(locomotionSounds.jumpSounds[randomSoundId]);
         }
     }
 
@@ -104,11 +116,17 @@ public class PlayerMovement : MonoBehaviour
 
     public void MeleeAttack()
     {
+        var randomSoundId = Random.Range(0, attackSounds.Count);
+        audioSource.PlayOneShot(attackSounds[randomSoundId]);
+
         meleeWeapon.MakeAttack();
     }
 
     public void GetHit()
     {
+        var randomSoundId = Random.Range(0, hurtSounds.Count);
+        audioSource.PlayOneShot(hurtSounds[randomSoundId]);
+
         animator.SetTrigger(hashHurt);
     }
 
@@ -116,5 +134,17 @@ public class PlayerMovement : MonoBehaviour
     {
         isDead = true;
         animator.SetTrigger(hashDie);
+        audioSource.PlayOneShot(dieSound);
+    }
+
+    public void Stepped()
+    {
+        var randomSoundId = Random.Range(0, locomotionSounds.walkFootstepSounds.Count);
+        audioSource.PlayOneShot(locomotionSounds.walkFootstepSounds[randomSoundId]);
+    }
+
+    public void Landed()
+    {
+        audioSource.PlayOneShot(locomotionSounds.land);
     }
 }

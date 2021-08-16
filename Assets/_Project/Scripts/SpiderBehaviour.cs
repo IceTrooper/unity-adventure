@@ -7,6 +7,12 @@ public class SpiderBehaviour : MonoBehaviour
     [SerializeField] private TargetScanner playerScanner;
     [SerializeField] private float timeToStopPursuit;
 
+    [Header("Audio")]
+    [SerializeField] private AudioSource audioSource;
+    [SerializeField] private AudioClip spottedSound;
+    [SerializeField] private AudioClip attackSound;
+    [SerializeField] private AudioClip dieSound;
+
     private EnemyController enemyController = null;
 
     private Vector3 originalPosition;
@@ -57,6 +63,7 @@ public class SpiderBehaviour : MonoBehaviour
             if(followTarget == null)
             {
                 // We just saw the player
+                audioSource.PlayOneShot(spottedSound);
                 enemyController.AnimatorController.SetTrigger(hashSpotted);
                 StartPursuit();
             }
@@ -111,6 +118,7 @@ public class SpiderBehaviour : MonoBehaviour
 
     public void Attack()
     {
+        audioSource.PlayOneShot(attackSound);
         meleeWeapon.MakeAttack();
     }
 
@@ -119,6 +127,7 @@ public class SpiderBehaviour : MonoBehaviour
         enemyController.NavMeshAgent.isStopped = true;
         GetComponent<Collider>().enabled = false;
         enemyController.AnimatorController.SetTrigger(hashDie);
+        audioSource.PlayOneShot(dieSound);
     }
 
     private void OnDrawGizmosSelected()

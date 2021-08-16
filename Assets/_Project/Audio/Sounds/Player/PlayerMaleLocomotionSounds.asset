@@ -1,0 +1,23 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 76a3d60274a5de24e9da938e550d2d39, type: 3}
+  m_Name: PlayerMaleLocomotionSounds
+  m_EditorClassIdentifier: 
+  walkFootstepSounds:
+  - {fileID: 8300000, guid: cc3c03b4f9f3c4e458b34b3f5f9a3449, type: 3}
+  - {fileID: 8300000, guid: 97d704b7680d90e47a2c0dabc37f7c37, type: 3}
+  - {fileID: 8300000, guid: b6b9b028527f8e348b8e47784548ccfb, type: 3}
+  - {fileID: 8300000, guid: e3b47421f98d397488b6156b7ede46c7, type: 3}
+  jumpSounds:
+  - {fileID: 8300000, guid: 9716c80c4ef269242949bf5310dcddee, type: 3}
+  - {fileID: 8300000, guid: b4d0bb1b11fd19a41b648ff4fbc7b082, type: 3}
+  land: {fileID: 8300000, guid: 3be0023a0ebff6a4ebf99705705d2912, type: 3}

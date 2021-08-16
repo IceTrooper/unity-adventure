@@ -48,6 +48,103 @@ CharacterController:
   m_SkinWidth: 0.025
   m_MinMoveDistance: 0.01
   m_Center: {x: 0, y: 0.9, z: 0}
+--- !u!82 &2847828827060610203
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8769616429306004599}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: -368180477997049690, guid: 2dbc74268b8ed9b45a50b4f8868b95ef,
+    type: 2}
+  m_audioClip: {fileID: 0}
+  m_PlayOnAwake: 0
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
 --- !u!114 &129069761118374667
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -196,7 +293,18 @@ MonoBehaviour:
   jumpForceValue: 8
   groundAcceleration: 20
   groundDeceleration: 25
+  locomotionSounds: {fileID: 11400000, guid: 10fcc73650768a54d8e55fe72b08f9b4, type: 2}
+  attackSounds:
+  - {fileID: 8300000, guid: e7b757cf670b28648bf5ff52beafe7d9, type: 3}
+  - {fileID: 8300000, guid: 849e4213de316a5488bfc846028c1619, type: 3}
+  - {fileID: 8300000, guid: c1b72459abe03b0468396587ae08b6a5, type: 3}
+  hurtSounds:
+  - {fileID: 8300000, guid: 4b6e0c8d5cf3b0a479abf1cbf0202b83, type: 3}
+  - {fileID: 8300000, guid: cac4f078a2d4270489dc0ece979133be, type: 3}
+  - {fileID: 8300000, guid: 946bfc781ec024c4ba0d172756493bae, type: 3}
+  dieSound: {fileID: 8300000, guid: e1afce9e03fa4ad4bba72a351e2be01c, type: 3}
   inAttack: 0
+  audioSource: {fileID: 2847828827060610203}
   meleeWeapon: {fileID: 4679649549473145493}
 --- !u!1 &8493640998577074082
 GameObject:

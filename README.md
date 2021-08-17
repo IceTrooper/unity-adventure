@@ -14,6 +14,8 @@ Projekt miał zawierać różne funkcjonalności popularne w grach 3d. Postanowi
 
 Projekt jest częścią kursu tworzenia gier w Unity i został zaprojektowany z myślą o kursach stacjonarnych, w których może uczestniczyć wiele osób. Napisz do mnie wiadomość prywatną, aby uzyskać link do kursu (tylko w wersji polskiej).
 
+![adventure-game-1280x640](https://user-images.githubusercontent.com/51023959/129801694-c718d060-2585-4c1f-bb72-f76caabac358.jpg)
+
 ## Main features
 
 * Sculpted terrain - using new **[Terrain Tools package](https://docs.unity3d.com/Packages/com.unity.terrain-tools@4.0/manual/index.html)**

@@ -1,5 +1,7 @@
 # Adventure Game
 
+![adventure-game-cutscene](https://user-images.githubusercontent.com/51023959/129758308-047de712-4890-48c1-9132-ee06cba022dd.gif)
+
 ## About
 
 The project was to include various functionalities popular in 3d games. It was decided to create an adventure game set in a dark and hostile world while maintaining a fairy-tale atmosphere. The aim of the game is to find the brightest crystal. During the way to the crystal you can encounter monsters. You should avoid trouble, but fighting is sometimes unavoidable, so we carry a big sword to help solve some problems. The game allows you to join another player in split-screen mode, so that together we can overcome the difficulties that stand in our way.
@@ -11,6 +13,8 @@ The project is part of a game development course in Unity and is designed for cl
 Projekt miał zawierać różne funkcjonalności popularne w grach 3d. Postanowiono stworzyć grę przygodową osadzoną w mrocznym i nieprzyjaznym świecie zachowując jednak bajkowy klimat. Celem gry jest znalezienie najjaśniejszego z kryształów. Podczas drogi do kryształu można napotkać potwory. Należy unikać kłopotów, jednak walka jest czasami nieunikniona, dlatego też nosimy przy sobie wielki miecz ułatwiający rozwiązywanie pewnych problemów. Gra pozwala na dołączenie drugiego gracza w trybie podzielonego ekranu, aby móc wspólnie pokonywać trudności, które staną na naszej drodze.
 
 Projekt jest częścią kursu tworzenia gier w Unity i został zaprojektowany z myślą o kursach stacjonarnych, w których może uczestniczyć wiele osób. Napisz do mnie wiadomość prywatną, aby uzyskać link do kursu (tylko w wersji polskiej).
+
+![adventure-game-1280x640](https://user-images.githubusercontent.com/51023959/129801694-c718d060-2585-4c1f-bb72-f76caabac358.jpg)
 
 ## Main features
 

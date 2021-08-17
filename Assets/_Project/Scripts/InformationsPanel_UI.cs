@@ -18,4 +18,9 @@ public class InformationsPanel_UI : MonoBehaviour
             SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
         }
     }
+
+    public void QuitGame()
+    {
+        Application.Quit();
+    }
 }

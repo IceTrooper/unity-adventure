@@ -1,5 +1,7 @@
 # Adventure Game
 
+![adventure-game-cutscene](https://user-images.githubusercontent.com/51023959/129758308-047de712-4890-48c1-9132-ee06cba022dd.gif)
+
 ## About
 
 The project was to include various functionalities popular in 3d games. It was decided to create an adventure game set in a dark and hostile world while maintaining a fairy-tale atmosphere. The aim of the game is to find the brightest crystal. During the way to the crystal you can encounter monsters. You should avoid trouble, but fighting is sometimes unavoidable, so we carry a big sword to help solve some problems. The game allows you to join another player in split-screen mode, so that together we can overcome the difficulties that stand in our way.

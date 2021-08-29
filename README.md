@@ -1,5 +1,7 @@
 # Adventure Game
 
+[![Made with Unity](https://img.shields.io/badge/Made%20with-Unity-57b9d3.svg?style=for-the-badge&logo=unity)](https://unity3d.com)
+
 ![adventure-game-cutscene](https://user-images.githubusercontent.com/51023959/129758308-047de712-4890-48c1-9132-ee06cba022dd.gif)
 
 ## About
